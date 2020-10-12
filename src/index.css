@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #F8F8F8;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+header, main, footer, body {
+  padding-left: 26rem;
+}
+
+@media only screen and (max-width : 992px) {
+  header, main, footer, body {
+    padding-left: 0;
+  }
+}
+
+p {
+  font-size: 1.4rem;
+  text-align: justify;
+}
+
+h3 {
+  padding-top: 1rem;
+  padding-bottom: 1.4rem;
+}
+
+.home {
+  color: white;
+  background: url('/img/mountain_river.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.home .container {
+  min-height: 100vh;
+}
+
+.figure img {
+  width: 100%;
+  height: auto;
+}
+
+.caption p {
+  font-size: medium;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.links {
+  font-size: large;
+  text-align: left;
+}
+
+i.icon-white {
+  color: white;
+}
+
+.sidenav.sidenav-custom li a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sidenav#slide-out {
+  width: 26rem;
+  height: 100%;
+}
+
+.sidenav-trigger {
+  margin: 2rem;
+}
+
+.user-view {
+  background-image: url('/img/polygons_darken.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#slide-out .user-view .name {
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+#slide-out .user-view .job-title {
+  font-size: 1.8rem;
+  font-weight: normal;
+}
+
+#slide-out .subheader {
+  font-size: 1.8rem;
+  font-weight: normal;
+}
+
+.sidenav #avatar {
+  width: 100%;
+  height: auto;
+}
+
+.sidenav.sidenav-custom li > a {
+  height: auto;
+  font-size: 1.2rem;
+  padding-left: 2.5rem;
+}
+
+#email-address {
+  padding-bottom: 0.6rem;
+}
+
+.github-card {
+  height: 600px;
+  overflow: hidden;
+}
+
+.github-card p {
+  font-size: 1.2rem;
+}
+
+.github-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.github-card .card-content {
+  flex: 1;
+  max-height: 100%;
+  align-items: center;
+  display: flex;
+  margin-bottom: auto;
+}

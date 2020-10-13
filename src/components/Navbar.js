@@ -15,12 +15,9 @@ const Navbar = (props) => {
                         </a>
                     </div>
                 </li>
-                {/* <li><a className="subheader">My Site</a></li> */}
                 <li><NavLink to='/about'><i className="material-icons" style={{color: "darkcyan"}}>person</i>About</NavLink></li>
                 <li><NavLink to='/projects'><i className="material-icons" style={{color: "crimson"}}>code</i>Projects</NavLink></li>
                 <li><NavLink to='/research'><i className="material-icons" style={{color: "forestgreen"}}>science</i>Research</NavLink></li>
-                {/* <li><div className="divider"></div></li> */}
-                {/* <li><a className="subheader">Links</a></li> */}
                 {/* <li><a href={resumePDF} target="_blank" rel="noopener noreferrer"><i className="material-icons" style={{color: "chocolate"}}>work</i>Resume</a></li> */}
                 <li><a href="/documents/Resume_Luke_Charbonneau.pdf" target="_blank" rel="noopener noreferrer"><i className="material-icons" style={{color: "chocolate"}}>work</i>Resume</a></li>
                 <li><a href="https://github.com/lukechar" target="_blank" rel="noopener noreferrer"><i className="material-icons" style={{color: "deeppink"}}>device_hub</i>Github Profile</a></li>

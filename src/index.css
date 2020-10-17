@@ -24,7 +24,7 @@ header, main, footer, body {
 }
 
 p {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   text-align: justify;
 }
 
@@ -87,6 +87,7 @@ i.icon-white {
 #slide-out .user-view .name {
   font-size: 2.4rem;
   font-weight: bold;
+  line-height: 2.2rem;
 }
 
 #slide-out .user-view .job-title {
@@ -134,4 +135,8 @@ i.icon-white {
   align-items: center;
   display: flex;
   margin-bottom: auto;
+}
+
+.card .card-image .card-title {
+  background: rgba(0,0,0,0.6);
 }

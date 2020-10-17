@@ -7,7 +7,7 @@ const Projects = (props) => {
             <h3>Personal Projects</h3>
             <div className="row">
                 <div className="col s12m xl6">
-                    <GithubCard image="../img/baking.jpg" title="Ingredient Weight Calculator" content="Calculator for determining the weight of common cooking/baking ingredients. Built with Django for the backend and a simple Twitter Bootstrap frontend." githubLink="https://github.com/lukechar/ingredient_weight_calculator/" appLink="https://www.lukeacharbonneau.com/ingredient_weight_calculator/"></GithubCard>
+                    <GithubCard image="../img/baking.jpg" title="Ingredient Weight Calculator" content="Calculator for determining the weight of common cooking/baking ingredients. Built with Django for the backend and a simple Twitter Bootstrap frontend." githubLink="https://github.com/lukechar/ingredient_weight_calculator/" appLink="https://lustrouslaser.nfshost.com/ingredient_weight_calculator/"></GithubCard>
                 </div>
                 <div className="col s12 xl6">
                     <GithubCard image="../img/raspi.png" title="Pi Video Stream" content="Pi-Video-Stream is a PiCamera tool that consists of a server (stream.py), which provides live video frames taken by any PiCamera via a http server running on a Raspberry Pi (of any flavor), and a client (streamView.py), which provides a simple PyQt GUI for connecting to and viewing the stream retrieved from the http server." githubLink="https://github.com/lukechar/Pi-Video-Stream"></GithubCard>

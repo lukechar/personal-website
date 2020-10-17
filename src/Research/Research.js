@@ -1,5 +1,4 @@
 import React from 'react';
-import thesisPDF from '../docs/Thesis_Luke_Charbonneau_11_3_2016.pdf';
 
 const Research = (props) => {
     return(
@@ -39,7 +38,7 @@ const Research = (props) => {
             </div>
           <h4>My contribution</h4>
           <p>My thesis work revolved around creating a method to stabilize the repetition rate of these light pulses, f<sub>r</sub>, which is the inverse of the period between the emitted pulses. There are several methods (3.1.3) which existed prior to this, but in my method (3.2), I sought to reduce the complexity of these established techniques. The method presented in my thesis was ultimately successful in reducing the timing jitter (which quantifies the degree of fluctuation, or noise, in the repetition rate) by at least four-fold from 100 Hz to 10 MHz.</p>
-          <a href={thesisPDF} target="_blank" type="application/pdf" rel="noopener noreferrer"><button className="btn waves-effect blue">View my thesis</button></a>
+          <a href="https://luke-charbonneau-personal-website-files.s3-us-west-1.amazonaws.com/Thesis_Luke_Charbonneau_11_3_2016.pdf" target="_blank" type="application/pdf" rel="noopener noreferrer"><button className="btn waves-effect blue">View my thesis</button></a>
           <h4>More Resources</h4>
           <ul className="links">
             <li>A fantastic animation that explains the basics of laser operation: <a href="https://upload.wikimedia.org/wikipedia/commons/5/54/Laser%2C_quantum_principle.ogv" alt="Laser Operation Animation" target="_blank" rel="noopener noreferrer">Video (sound)</a></li>

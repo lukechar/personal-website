@@ -8,7 +8,11 @@ const Home = (props) => {
                     <div className="col s12">
                         <h2>Luke Charbonneau</h2>
                         <h4>Software Engineer | Product Developer</h4>
-                        <p className="center-align">Driven software engineer, product developer and graduate of a first-tier optical physics program interested in full stack web development, embedded systems (IoT), scientific tools development and data science. I enjoy writing self-explanatory code to achieve meaningful technical goals that improve the bottom line.</p>  
+                        <p className="center-align">
+                            Data engineer and back‑end web developer with professional experience that includes building data processing pipelines for NASA missions and
+                            leading the development of scientific software products from idea to market. I enjoy writing self‑explanatory code to achieve meaningful technical
+                            goals that improve the bottom line. I offer freelance coding services in my spare time under the Colorado‑registered Castle Scientific LLC.
+                        </p>  
                     </div>
                 </div>
             </div>

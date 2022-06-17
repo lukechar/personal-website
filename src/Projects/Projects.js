@@ -15,7 +15,7 @@ const Projects = (props) => {
             </div>
             <div className="row">
                 <div className="col s12 xl6">
-                    <GithubCard image="../img/skier.jpg" title="Snowfall API" content="The snowfall_api scrapes web results with the Python Beautiful Soup to get the latest snow and weather conditions for various ski resorts in the US + Canada. The API runs on a simple Flask server and endpoints are accessible with the URI format: '/snow_report/[resort name]'" githubLink="https://github.com/lukechar/snowfall_api/"></GithubCard>
+                    <GithubCard image="../img/skier.jpg" title="Snowfall API" content="The snowfall_api scrapes web results with the Beautiful Soup Python library to get the latest snow and weather conditions for various ski resorts in the US + Canada. The API runs on a simple Flask server and endpoints are accessible with the URI format: '/snow_report/[resort name]'" githubLink="https://github.com/lukechar/snowfall_api/"></GithubCard>
                 </div>
                 <div className="col s12 xl6">
                     <GithubCard image="../img/snowfall_screenshot.jpg" title="Snowfall Phone App" content="Phone app that consumes the snowfall_api to provide snowfall reports and forecasts for ski areas. Built with Flutter." githubLink="https://github.com/lukechar/snowfall/"></GithubCard>

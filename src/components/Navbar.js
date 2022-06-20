@@ -7,16 +7,16 @@ const Navbar = (props) => {
             <ul id="slide-out" className="sidenav sidenav-fixed grey lighten-1 sidenav-custom">
                 <li>
                     <div className="user-view">
-                        <a href="/">
-                            <a><img className="circle" id="avatar" src="/img/luke_pass.jpg" /></a>
+                        <NavLink to="/" className="sidenav-close">
+                            <a><img className="circle" id="avatar" alt="Me on top of Mummy Pass in Northern Colorado." src="/img/luke_pass.jpg" /></a>
                             <a><span className="white-text name">Luke Charbonneau</span></a>
                             <a><span className="white-text job-title">Software Engineer</span></a>
-                        </a>
+                        </NavLink>
                     </div>
                 </li>
-                <li><NavLink to='/about'><i className="material-icons" style={{color: "darkcyan"}}>person</i>About</NavLink></li>
-                <li><NavLink to='/projects'><i className="material-icons" style={{color: "crimson"}}>code</i>Projects</NavLink></li>
-                <li><NavLink to='/research'><i className="material-icons" style={{color: "forestgreen"}}>science</i>Research</NavLink></li>
+                <li><NavLink to='/about' className="sidenav-close"><i className="material-icons" style={{color: "darkcyan"}}>person</i>About</NavLink></li>
+                <li><NavLink to='/projects' className="sidenav-close"><i className="material-icons" style={{color: "crimson"}}>code</i>Projects</NavLink></li>
+                <li><NavLink to='/research' className="sidenav-close"><i className="material-icons" style={{color: "forestgreen"}}>science</i>Research</NavLink></li>
                 <li><a href="https://luke-charbonneau-personal-website-files.s3-us-west-1.amazonaws.com/Resume_Luke_Charbonneau.pdf" target="_blank" type="application/pdf" rel="noopener noreferrer"><i className="material-icons" style={{color: "chocolate"}}>work</i>Resume</a></li>
                 {/* <li><a href="/documents/Resume_Luke_Charbonneau.pdf" target="_blank" rel="noopener noreferrer"><i className="material-icons" style={{color: "chocolate"}}>work</i>Resume</a></li> */}
                 <li><a href="https://github.com/lukechar" target="_blank" rel="noopener noreferrer"><i className="material-icons" style={{color: "deeppink"}}>device_hub</i>Github Profile</a></li>

@@ -7,7 +7,7 @@ const Projects = (props) => {
             <h3>Personal Projects</h3>
             <div className="row">
                 <div className="col s12m xl6">
-                    <GithubCard image="../img/baking.jpg" title="Ingredient Weight Calculator" content="Calculator for determining the weight of common cooking/baking ingredients. Built with Django for the backend and a simple Twitter Bootstrap frontend." githubLink="https://github.com/lukechar/ingredient_weight_calculator/" appLink="http://django-env-weight-calc.eba-3pgwa3cw.us-west-2.elasticbeanstalk.com/"></GithubCard>
+                    <GithubCard image="../img/baking.jpg" title="Chef Calc" content="Calculator for determining the weight of common cooking/baking ingredients based on volume for improved accuracy. Built with Django for the backend and a simple Twitter Bootstrap frontend." githubLink="https://github.com/lukechar/ingredient_weight_calculator/" appLink="https://chefcalc.com/"></GithubCard>
                 </div>
                 <div className="col s12 xl6">
                     <GithubCard image="../img/raspi.png" title="Pi Video Stream" content="Pi-Video-Stream is a PiCamera tool that consists of a server (stream.py), which provides live video frames taken by any PiCamera via a http server running on a Raspberry Pi (of any flavor), and a client (streamView.py), which provides a simple PyQt GUI for connecting to and viewing the stream retrieved from the http server." githubLink="https://github.com/lukechar/Pi-Video-Stream"></GithubCard>
@@ -15,7 +15,7 @@ const Projects = (props) => {
             </div>
             <div className="row">
                 <div className="col s12 xl6">
-                    <GithubCard image="../img/skier.jpg" title="Snowfall API" content="The snowfall_api scrapes web results with the Python Beautiful Soup to get the latest snow and weather conditions for various ski resorts in the US + Canada. The API runs on a simple Flask server and endpoints are accessible with the URI format: '/snow_report/[resort name]'" githubLink="https://github.com/lukechar/snowfall_api/"></GithubCard>
+                    <GithubCard image="../img/skier.jpg" title="Snowfall API" content="The snowfall_api scrapes web results with the Beautiful Soup Python library to get the latest snow and weather conditions for various ski resorts in the US + Canada. The API runs on a simple Flask server and endpoints are accessible with the URI format: '/snow_report/[resort name]'" githubLink="https://github.com/lukechar/snowfall_api/"></GithubCard>
                 </div>
                 <div className="col s12 xl6">
                     <GithubCard image="../img/snowfall_screenshot.jpg" title="Snowfall Phone App" content="Phone app that consumes the snowfall_api to provide snowfall reports and forecasts for ski areas. Built with Flutter." githubLink="https://github.com/lukechar/snowfall/"></GithubCard>

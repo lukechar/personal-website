@@ -65,10 +65,6 @@ i.icon-white {
   color: white;
 }
 
-.sidenav.sidenav-custom li a:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
 .sidenav#slide-out {
   width: 26rem;
   height: 100%;

@@ -1,0 +1,18 @@
+type Comment @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  author: String
+  content: String
+  date: AWSDate
+  articleID: ID! @index(name: "byArticle")
+}
+
+type Article @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  title: String
+  author: String
+  date: AWSDate
+  content: String
+  keywords: String
+  description: String
+  Comments: [Comment!] @hasMany(indexName: "byArticle", fields: ["id"])
+}

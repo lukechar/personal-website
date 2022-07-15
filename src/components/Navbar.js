@@ -21,6 +21,7 @@ const Navbar = (props) => {
                 {/* <li><a href="/documents/Resume_Luke_Charbonneau.pdf" target="_blank" rel="noopener noreferrer"><i className="material-icons" style={{color: "chocolate"}}>work</i>Resume</a></li> */}
                 <li><a href="https://github.com/lukechar" target="_blank" rel="noopener noreferrer"><i className="material-icons" style={{color: "deeppink"}}>device_hub</i>Github Profile</a></li>
                 <li><a href="https://www.linkedin.com/in/lukeacharbonneau/" target="_blank" rel="noopener noreferrer"><i className="material-icons" style={{color: "navy"}}>domain</i>LinkedIn Profile</a></li>
+                <li><NavLink to='/blog' className="sidenav-close"><i className="material-icons" style={{color: "darkbrown"}}>keyboard</i>Blog</NavLink></li>
                 {/* <li><div className="divider"></div></li> */}
                 <li><a className="subheader">Contact</a></li>
                 <li id="email-address"><a href="mailto:charbonneau.luke@gmail.com"><i className="material-icons" style={{color: "maroon"}}>mail</i>charbonneau.luke@gmail.com</a></li>

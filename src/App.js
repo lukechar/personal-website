@@ -5,6 +5,7 @@ import Home from './Home/Home';
 import About from './About/About';
 import Projects from './Projects/Projects';
 import Research from './Research/Research';
+import Blog from './Blog/Blog';
 import M from 'materialize-css';
 import './App.css';
 
@@ -34,6 +35,7 @@ class App extends Component {
             <Route path='/about' component={About}/>
             <Route path='/projects' component={Projects}/>
             <Route path='/research' component={Research}/>
+            <Route path='/blog' component={Blog}/>
           </Switch>
         </div>
       </BrowserRouter>

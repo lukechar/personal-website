@@ -1,75 +1,76 @@
+// Text here mirrors public/files/Resume_Luke_Charbonneau.pdf word for word (minus locations).
+// Keep the two in sync when the resume changes.
+
 export interface Job {
   org: string;
   orgUrl?: string;
   role: string;
-  start: string;
-  end: string;
+  dates: string;
   summary: string;
   highlights: string[];
 }
+
+export const summary =
+  'Data engineer and back‑end web developer with professional experience that includes building data processing pipelines for NASA missions and leading the development of scientific software products from idea to market. I enjoy writing self‑explanatory code to achieve meaningful technical goals that improve the bottom line.';
 
 export const experience: Job[] = [
   {
     org: 'Laboratory for Atmospheric and Space Physics (LASP)',
     orgUrl: 'https://lasp.colorado.edu/',
     role: 'Software Engineer',
-    start: 'Apr 2021',
-    end: 'Present',
+    dates: 'Apr. 2021 - Present',
     summary:
-      'Building and maintaining data pipelines that process telemetry from NASA mission instruments into publicly available scientific data products used by researchers worldwide.',
+      'Building and maintaining data pipelines to process telemetry from NASA mission instruments into publicly‑available scientific data products utilized by researchers in various fields worldwide.',
     highlights: [
-      'Primary engineer on processing and correcting data from the Spectral Irradiance Monitor (SIM) instrument on the Total and Spectral Solar Irradiance Sensor (TSIS) mission.',
-      'Developing monitoring tools that check both the health of the data processing pipeline and the performance of physical components integral to the TSIS-SIM instrument.',
-      'Working with mission operations teams, instrument scientists and other data engineers to understand and improve science data products.',
+      'Primarily working on the Total and Spectral solar Irradiance Sensor (TSIS) mission to process and apply corrections to the data collected by its Spectral Irradiance Monitor (SIM) instrument.',
+      'Developing various monitoring tools that check both the functionality of the data processing pipeline and performance of physical components that are integral to operation of the TSIS‑SIM instrument',
+      'Working with other stakeholders including mission operation teams, instrument scientists and other data engineers to understand and improve science data products',
     ],
   },
   {
     org: 'Crunch Technologies',
     orgUrl: 'https://crunchtec.com/',
     role: 'Head of Product Development',
-    start: 'Oct 2018',
-    end: 'Apr 2021',
+    dates: 'Oct. 2018 - Apr. 2021',
     summary:
-      'Led product development at a startup focused on engineering and producing ultrafast laser systems and related laboratory instruments.',
+      'In charge of development and improvement of products at Crunch Technologies, a startup focused on the production and engineering of ultrafast laser systems and related laboratory instruments.',
     highlights: [
-      'Lead developer of software applications for new ultrafast laser measurement products.',
-      'Spearheaded the design of integrated laboratory laser diagnostic systems.',
-      'Drew on extensive hands-on experience with optical components and instruments to build and improve ultrafast laser system components.',
+      'Lead developer of software applications for use in new ultrafast laser measurement products',
+      'Spearheaded design of integrated laboratory laser diagnostic systems',
+      'Leveraged extensive hands‑on experience with numerous optical components, devices and instruments to build and improve ultrafast laser system components',
     ],
   },
   {
     org: 'Photon Kinetics, Inc.',
     role: 'Measurement Engineer',
-    start: 'Oct 2017',
-    end: 'Sep 2018',
+    dates: 'Oct. 2017 - Sep. 2018',
     summary:
-      'Redesign, software development and production management for optical characterization instruments used in large-scale optical fiber manufacturing facilities worldwide.',
+      'Played a key role in redesign efforts, software development and production management of optical characterization instruments used in large‑scale optical fiber manufacturing facilities across the globe.',
     highlights: [
-      'Redesigned fiber-production measurement systems for significantly lower manufacturing cost and better reliability.',
-      'Created and automated production processes to improve lead times and uniformity.',
-      'Supported customer systems through remote diagnosis of technical issues.',
-      'Designed new hardware and software for existing products to fit unique customer needs.',
+      'Successfully redesigned fiber‑production measurement systems for significantly reduced manufacturing cost and enhanced reliability',
+      'Created and automated production processes to improve product lead times and uniformity',
+      'Supported existing customer systems via remote diagnosis of technical issues',
+      'Performed new hardware design and software development for existing products to fit unique customer needs',
     ],
   },
 ];
 
 export const skills: { label: string; items: string[] }[] = [
   { label: 'Languages', items: ['Python', 'Java', 'SQL', 'JavaScript'] },
-  { label: 'Data analysis', items: ['Pandas', 'Matplotlib', 'NumPy', 'SciPy', 'AstroPy'] },
-  { label: 'Databases', items: ['PostgreSQL', 'MongoDB', 'Redis', 'Oracle DB', 'Firestore'] },
-  { label: 'Web', items: ['Django', 'React', 'HTML', 'CSS', 'AWS (EC2, Elastic Beanstalk, Amplify, S3, Route 53)'] },
-  { label: 'Embedded', items: ['Arduino (C/C++)', 'Touch screen ISRs'] },
-  { label: 'Scripting', items: ['Bash', 'PowerShell'] },
+  { label: 'Data Analysis', items: ['Pandas', 'Matplotlib', 'Numpy', 'Scipy', 'AstroPy'] },
+  { label: 'Databases', items: ['Postgres', 'MongoDB', 'Redis', 'Oracle DB', 'Firestore'] },
+  { label: 'Web Apps', items: ['Django', 'ReactJS', 'HTML', 'CSS', 'AWS (EC2, EB, Amplify, S3, Route 53)'] },
+  { label: 'Embedded', items: ['Arduino (C/C++)', 'Touch Screen ISRs'] },
+  { label: 'Scripting', items: ['Bash', 'Powershell'] },
 ];
 
 export const education = {
   school: 'University of Colorado',
-  degree: 'M.S. Physics (Atomic, Molecular and Optical) and B.A. Physics',
-  start: 'Aug 2011',
-  end: 'Dec 2016',
+  degree: 'M.S. (Atomic, Molecular and Optical) Physics and B.A. Physics',
+  dates: 'Aug. 2011 - Dec. 2016',
   highlights: [
-    'Concurrent B.A./M.S. physics program with a concentration in experimental ultrafast optics.',
-    'Master’s thesis: “A Simplified Method for the Repetition Rate Stabilization of Modelocked Lasers: A PDH-Based Technique” (2016).',
-    'Wrote Python software to process image data and detect subtle changes in the reflectivity of specialized optical devices.',
+    'Concurrent BA/MS physics program; Concentration in experimental ultrafast optics',
+    'Master’s thesis, ”A Simplified Method for the Repetition Rate Stabilization of Modelocked Lasers: A PDH‑Based Technique”, defended in 2016',
+    'Wrote software in Python to process image data with the objective of detecting subtle changes in reflectivity of specialized optical devices',
   ],
 };

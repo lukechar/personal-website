@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
-import { experience, skills, education } from '../data/resume';
+import { summary, experience, skills, education } from '../data/resume';
 import { site } from '../data/site';
 ---
 
@@ -10,19 +10,24 @@ import { site } from '../data/site';
     <header class="page-header head">
       <div>
         <h1>Resume</h1>
-        <p>{site.title}</p>
+        <p>Data Engineer · Back‑End Developer</p>
       </div>
       <a class="btn" href={site.resumePdf}><Icon name="download" size={16} /> Download PDF</a>
     </header>
 
     <section class="section">
-      <h2 class="section-title">Experience</h2>
+      <h2 class="section-title">Summary</h2>
+      <p class="summary">{summary}</p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Work Experience</h2>
       <ol class="timeline">
         {
           experience.map((job) => (
             <li class="job">
               <div class="when">
-                <span>{job.start} – {job.end}</span>
+                <span>{job.dates}</span>
               </div>
               <div class="what">
                 <h3>{job.role}</h3>
@@ -40,7 +45,7 @@ import { site } from '../data/site';
       <h2 class="section-title">Education</h2>
       <div class="job">
         <div class="when">
-          <span>{education.start} – {education.end}</span>
+          <span>{education.dates}</span>
         </div>
         <div class="what">
           <h3>{education.degree}</h3>
@@ -52,7 +57,7 @@ import { site } from '../data/site';
     </section>
 
     <section class="section">
-      <h2 class="section-title">Skills</h2>
+      <h2 class="section-title">Coding Experience</h2>
       <dl class="skills">
         {
           skills.map((group) => (
@@ -85,6 +90,9 @@ import { site } from '../data/site';
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--border);
     font-size: var(--step-2);
+  }
+  .summary {
+    max-width: var(--measure);
   }
   .timeline {
     list-style: none;

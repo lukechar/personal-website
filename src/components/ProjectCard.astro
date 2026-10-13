@@ -1,0 +1,99 @@
+---
+import { Image } from 'astro:assets';
+import Icon from './Icon.astro';
+import type { Project } from '../data/projects';
+
+interface Props {
+  project: Project;
+  compact?: boolean;
+}
+
+const { project, compact = false } = Astro.props;
+---
+
+<article class="card">
+  <Image
+    src={project.image}
+    alt={project.imageAlt}
+    widths={[400, 800]}
+    sizes="(max-width: 40rem) 100vw, 400px"
+    class="thumb"
+  />
+  <div class="body">
+    <h3>{project.title}</h3>
+    <p>{compact ? project.summary : project.description}</p>
+    <ul class="tags">{project.tags.map((t) => <li>{t}</li>)}</ul>
+    <div class="links">
+      {
+        project.code && (
+          <a href={project.code} rel="noopener noreferrer">
+            <Icon name="github" size={16} /> Code
+          </a>
+        )
+      }
+      {
+        project.live && (
+          <a href={project.live} rel="noopener noreferrer">
+            <Icon name="external" size={16} /> Live site
+          </a>
+        )
+      }
+    </div>
+  </div>
+</article>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+  .card:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+  }
+  .thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border);
+  }
+  .body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0.75rem;
+    padding: 1.25rem;
+  }
+  h3 {
+    margin: 0;
+  }
+  p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.975rem;
+    line-height: 1.6;
+  }
+  .links {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: auto;
+    padding-top: 0.25rem;
+  }
+  .links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    font-weight: 550;
+    font-size: var(--step--1);
+    text-decoration: none;
+  }
+  .links a:hover {
+    text-decoration: underline;
+  }
+</style>

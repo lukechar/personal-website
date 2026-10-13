@@ -1,0 +1,59 @@
+---
+import Icon from './Icon.astro';
+import { site } from '../data/site';
+---
+
+<footer class="site-footer">
+  <div class="container inner">
+    <p class="muted">© {new Date().getFullYear()} {site.name}</p>
+    <ul class="social">
+      <li>
+        <a href={`mailto:${site.email}`} aria-label="Email"><Icon name="mail" /></a>
+      </li>
+      <li>
+        <a href={site.github} aria-label="GitHub" rel="noopener noreferrer"><Icon name="github" /></a>
+      </li>
+      <li>
+        <a href={site.linkedin} aria-label="LinkedIn" rel="noopener noreferrer"><Icon name="linkedin" /></a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding-block: 1.5rem;
+    margin-top: 2rem;
+  }
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  p {
+    margin: 0;
+    font-size: var(--step--1);
+  }
+  .social {
+    display: flex;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .social a {
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 999px;
+    color: var(--text-muted);
+  }
+  .social a:hover {
+    color: var(--accent);
+    background: var(--accent-soft);
+  }
+</style>

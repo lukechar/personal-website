@@ -1,0 +1,167 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { experience, skills, education } from '../data/resume';
+import { site } from '../data/site';
+---
+
+<Base title="Resume" description="Resume of Luke Charbonneau: software engineer at LASP, formerly Head of Product Development at Crunch Technologies.">
+  <div class="container">
+    <header class="page-header head">
+      <div>
+        <h1>Resume</h1>
+        <p>Software engineer building data pipelines and back-end systems.</p>
+      </div>
+      <a class="btn" href={site.resumePdf}><Icon name="download" size={16} /> Download PDF</a>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">Experience</h2>
+      <ol class="timeline">
+        {
+          experience.map((job) => (
+            <li class="job">
+              <div class="when">
+                <span>{job.start} – {job.end}</span>
+                <span class="muted">{job.location}</span>
+              </div>
+              <div class="what">
+                <h3>{job.role}</h3>
+                <p class="org">{job.orgUrl ? <a href={job.orgUrl} rel="noopener noreferrer">{job.org}</a> : job.org}</p>
+                <p>{job.summary}</p>
+                <ul>{job.highlights.map((h) => <li>{h}</li>)}</ul>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+      <div class="job">
+        <div class="when">
+          <span>{education.start} – {education.end}</span>
+          <span class="muted">{education.location}</span>
+        </div>
+        <div class="what">
+          <h3>{education.degree}</h3>
+          <p class="org">{education.school}</p>
+          <ul>{education.highlights.map((h) => <li>{h}</li>)}</ul>
+          <a href="/research/">Read about my research <Icon name="arrow-right" size={14} /></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Skills</h2>
+      <dl class="skills">
+        {
+          skills.map((group) => (
+            <div>
+              <dt>{group.label}</dt>
+              <dd>
+                <ul class="tags">{group.items.map((s) => <li>{s}</li>)}</ul>
+              </dd>
+            </div>
+          ))
+        }
+      </dl>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+  }
+  .head p {
+    margin: 0;
+  }
+  .section-title {
+    margin-top: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+    font-size: var(--step-2);
+  }
+  .timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .job {
+    display: grid;
+    grid-template-columns: 11rem 1fr;
+    gap: 0.5rem 2rem;
+    padding-block: 1.5rem;
+  }
+  .timeline .job + .job {
+    border-top: 1px dashed var(--border);
+  }
+  .when {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--step--1);
+    font-weight: 550;
+    padding-top: 0.2rem;
+  }
+  .when .muted {
+    font-weight: 400;
+  }
+  .what {
+    max-width: var(--measure);
+  }
+  .what h3 {
+    margin-bottom: 0.15rem;
+  }
+  .org {
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+  }
+  .org a {
+    text-decoration: none;
+  }
+  .what ul {
+    padding-left: 1.1rem;
+    color: var(--text-muted);
+  }
+  .what li + li {
+    margin-top: 0.35rem;
+  }
+  .what > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    font-weight: 550;
+    font-size: var(--step--1);
+  }
+  .skills {
+    display: grid;
+    gap: 1rem;
+    margin: 0;
+  }
+  .skills > div {
+    display: grid;
+    grid-template-columns: 11rem 1fr;
+    gap: 0.5rem 2rem;
+    align-items: start;
+  }
+  dt {
+    font-weight: 550;
+    font-size: var(--step--1);
+    padding-top: 0.15rem;
+  }
+  dd {
+    margin: 0;
+  }
+  @media (max-width: 40rem) {
+    .job,
+    .skills > div {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

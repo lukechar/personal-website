@@ -1,0 +1,89 @@
+---
+import { nav, site } from '../data/site';
+
+const path = Astro.url.pathname.replace(/\/?$/, '/');
+---
+
+<header class="site-header">
+  <div class="container bar">
+    <a href="/" class="brand" aria-current={path === '/' ? 'page' : undefined}>{site.name}</a>
+    <nav aria-label="Main">
+      <ul>
+        {
+          nav.map((item) => (
+            <li>
+              <a href={item.href} aria-current={path.startsWith(item.href) ? 'page' : undefined}>
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: color-mix(in srgb, var(--bg) 85%, transparent);
+    backdrop-filter: saturate(180%) blur(10px);
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.5rem;
+    min-height: 4rem;
+    padding-block: 0.5rem;
+  }
+  .brand {
+    font-weight: 650;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .brand:hover {
+    color: var(--accent);
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  nav a {
+    display: block;
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  nav a:hover {
+    color: var(--text);
+    background: var(--accent-soft);
+  }
+  nav a[aria-current='page'] {
+    color: var(--accent);
+    background: var(--accent-soft);
+  }
+  @media (max-width: 34rem) {
+    .bar {
+      justify-content: center;
+    }
+    nav a {
+      padding: 0.35rem 0.6rem;
+    }
+  }
+</style>

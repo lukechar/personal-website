@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { projects } from '../data/projects';
+import { site } from '../data/site';
+---
+
+<Base title="Projects" description="Personal software projects by Luke Charbonneau.">
+  <div class="container">
+    <header class="page-header">
+      <h1>Projects</h1>
+      <p>
+        Things I’ve built in my spare time. More on <a href={site.github} rel="noopener noreferrer">GitHub</a>.
+      </p>
+    </header>
+
+    <div class="grid section">
+      {projects.map((p) => <ProjectCard project={p} />)}
+    </div>
+  </div>
+</Base>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: 1.5rem;
+  }
+</style>

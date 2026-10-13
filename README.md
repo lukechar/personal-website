@@ -39,10 +39,12 @@ Configuration that lives in this repo:
 
 Configured in the Amplify console (App settings → Rewrites and redirects):
 
-| Source                            | Target                                | Type |
-| --------------------------------- | ------------------------------------- | ---- |
-| `https://lukeacharbonneau.com/<*>` | `https://www.lukeacharbonneau.com/<*>` | 301  |
-| `/<*>`                            | `/404.html`                           | 404  |
+| Source                        | Target                            | Type                                   |
+| ----------------------------- | --------------------------------- | -------------------------------------- |
+| `https://lukeacharbonneau.com` | `https://www.lukeacharbonneau.com` | 301 (Amplify appends the path)         |
+| `/<*>`                        | `/404.html`                       | 404-200 (serves 404.html with a 404 status) |
+
+Note: the plain `404` type answers with a 302 redirect to `/404.html` instead, so use `404-200`.
 
 `.github/workflows/ci.yml` builds every PR and branch push, so broken builds are caught before they reach `main`.
 

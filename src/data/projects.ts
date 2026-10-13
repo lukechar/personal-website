@@ -79,7 +79,7 @@ export const projects: Project[] = [
     description:
       'A static site built with Astro and hosted on S3 and CloudFront. Licensed under the GPLv3, so feel free to use it as a template. Attribution or a link back is appreciated but not required.',
     image: mountainRiver,
-    imageAlt: 'A mountain river in Colorado',
+    imageAlt: 'A mountain river',
     tags: ['Astro', 'AWS', 'CSS'],
     code: 'https://github.com/lukechar/personal-website/',
   },

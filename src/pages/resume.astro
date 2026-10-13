@@ -10,7 +10,7 @@ import { site } from '../data/site';
     <header class="page-header head">
       <div>
         <h1>Resume</h1>
-        <p>Software engineer building data pipelines and back-end systems.</p>
+        <p>{site.title}</p>
       </div>
       <a class="btn" href={site.resumePdf}><Icon name="download" size={16} /> Download PDF</a>
     </header>
@@ -23,7 +23,6 @@ import { site } from '../data/site';
             <li class="job">
               <div class="when">
                 <span>{job.start} – {job.end}</span>
-                <span class="muted">{job.location}</span>
               </div>
               <div class="what">
                 <h3>{job.role}</h3>
@@ -42,7 +41,6 @@ import { site } from '../data/site';
       <div class="job">
         <div class="when">
           <span>{education.start} – {education.end}</span>
-          <span class="muted">{education.location}</span>
         </div>
         <div class="what">
           <h3>{education.degree}</h3>

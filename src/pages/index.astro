@@ -4,6 +4,7 @@ import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import avatar from '../assets/luke_pass.jpg';
+import mountainRiver from '../assets/mountain_river.jpg';
 import { projects } from '../data/projects';
 import { site } from '../data/site';
 
@@ -11,25 +12,36 @@ const featured = projects.filter((p) => p.featured);
 ---
 
 <Base>
-  <section class="container hero">
+  <section class="hero">
     <Image
-      src={avatar}
-      alt="Luke at the top of Mummy Pass in northern Colorado"
-      widths={[176, 352]}
-      sizes="176px"
-      class="avatar"
+      src={mountainRiver}
+      alt=""
+      widths={[800, 1400, 1800]}
+      sizes="100vw"
+      class="hero-bg"
       loading="eager"
+      fetchpriority="high"
     />
-    <div>
-      <p class="eyebrow">{site.title}</p>
-      <h1>Hi, I’m Luke.</h1>
-      <p class="lede">
-        I build data processing pipelines for NASA missions at the <a href="https://lasp.colorado.edu/" rel="noopener noreferrer">Laboratory for Atmospheric and Space Physics</a> in Boulder, Colorado. Before software, I was an experimental physicist working with ultrafast lasers, and I still enjoy work where code meets real-world measurement.
-      </p>
-      <div class="btn-row">
-        <a class="btn" href="/resume/">View resume <Icon name="arrow-right" size={16} /></a>
-        <a class="btn btn-outline" href="/projects/">Projects</a>
-        <a class="btn btn-outline" href={`mailto:${site.email}`}><Icon name="mail" size={16} /> Get in touch</a>
+    <div class="container hero-inner">
+      <Image
+        src={avatar}
+        alt="Luke at the top of a mountain pass"
+        widths={[176, 352]}
+        sizes="176px"
+        class="avatar"
+        loading="eager"
+      />
+      <div>
+        <h1>{site.name}</h1>
+        <p class="subtitle">{site.title}</p>
+        <p class="lede">
+          I build data processing pipelines for NASA missions at the <a href="https://lasp.colorado.edu/" rel="noopener noreferrer">Laboratory for Atmospheric and Space Physics</a>. Before software, I was an experimental physicist working with ultrafast lasers, and I still enjoy work where code meets real-world measurement.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-light" href="/resume/">View resume <Icon name="arrow-right" size={16} /></a>
+          <a class="btn btn-ghost" href="/projects/">Projects</a>
+          <a class="btn btn-ghost" href={`mailto:${site.email}`}><Icon name="mail" size={16} /> Get in touch</a>
+        </div>
       </div>
     </div>
   </section>
@@ -56,29 +68,98 @@ const featured = projects.filter((p) => p.featured);
 
 <style>
   .hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    color: #f8f8f8;
+    background: #1d2a30;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  /* Darken the photo so white text stays readable everywhere on it. */
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(100deg, rgb(8 14 18 / 0.72) 0%, rgb(8 14 18 / 0.45) 55%, rgb(8 14 18 / 0.2) 100%);
+  }
+  .hero-inner {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
     gap: clamp(1.5rem, 5vw, 3.5rem);
-    padding-block: clamp(3rem, 9vw, 6rem) 2.5rem;
+    padding-block: clamp(4rem, 12vw, 8rem);
   }
-  .hero > div {
+  .hero-inner > div {
     min-width: 0;
+  }
+  .hero h1 {
+    margin-bottom: 0.25rem;
+    text-shadow: 0 2px 12px rgb(0 0 0 / 0.35);
+  }
+  .subtitle {
+    font-size: var(--step-1);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: #9be3dc;
+    margin-bottom: 1.25rem;
   }
   .avatar {
     width: 176px;
     height: 176px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid var(--surface);
-    box-shadow: 0 0 0 1px var(--border), var(--shadow-hover);
+    border: 4px solid rgb(255 255 255 / 0.9);
+    box-shadow: 0 8px 30px rgb(0 0 0 / 0.35);
   }
   .lede {
     font-size: var(--step-1);
     line-height: 1.55;
-    color: var(--text-muted);
+    color: rgb(248 248 248 / 0.9);
     max-width: 40em;
     margin-bottom: 1.75rem;
+  }
+  .lede a {
+    color: #fff;
+    text-decoration-color: rgb(255 255 255 / 0.6);
+  }
+  .lede a:hover {
+    color: #fff;
+    text-decoration-color: #fff;
+  }
+  .btn-light {
+    background: #fff;
+    border-color: #fff;
+    color: #0b2b2b;
+  }
+  .btn-light:hover {
+    background: #dff3f1;
+    border-color: #dff3f1;
+    color: #0b2b2b;
+  }
+  .btn-ghost {
+    background: rgb(255 255 255 / 0.08);
+    border-color: rgb(255 255 255 / 0.55);
+    color: #fff;
+  }
+  .btn-ghost:hover {
+    background: rgb(255 255 255 / 0.18);
+    border-color: #fff;
+    color: #fff;
+  }
+  .hero :focus-visible {
+    outline-color: #fff;
+  }
+  .now {
+    margin-top: 2.5rem;
   }
   .now-card {
     border-left: 3px solid var(--accent);
@@ -115,9 +196,8 @@ const featured = projects.filter((p) => p.featured);
     gap: 1.25rem;
   }
   @media (max-width: 40rem) {
-    .hero {
+    .hero-inner {
       grid-template-columns: 1fr;
-      text-align: left;
     }
     .avatar {
       width: 120px;

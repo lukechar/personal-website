@@ -2,7 +2,6 @@ export interface Job {
   org: string;
   orgUrl?: string;
   role: string;
-  location: string;
   start: string;
   end: string;
   summary: string;
@@ -14,7 +13,6 @@ export const experience: Job[] = [
     org: 'Laboratory for Atmospheric and Space Physics (LASP)',
     orgUrl: 'https://lasp.colorado.edu/',
     role: 'Software Engineer',
-    location: 'Boulder, CO',
     start: 'Apr 2021',
     end: 'Present',
     summary:
@@ -29,7 +27,6 @@ export const experience: Job[] = [
     org: 'Crunch Technologies',
     orgUrl: 'https://crunchtec.com/',
     role: 'Head of Product Development',
-    location: 'Boulder, CO',
     start: 'Oct 2018',
     end: 'Apr 2021',
     summary:
@@ -43,7 +40,6 @@ export const experience: Job[] = [
   {
     org: 'Photon Kinetics, Inc.',
     role: 'Measurement Engineer',
-    location: 'Beaverton, OR',
     start: 'Oct 2017',
     end: 'Sep 2018',
     summary:
@@ -68,7 +64,6 @@ export const skills: { label: string; items: string[] }[] = [
 
 export const education = {
   school: 'University of Colorado',
-  location: 'Boulder, CO',
   degree: 'M.S. Physics (Atomic, Molecular and Optical) and B.A. Physics',
   start: 'Aug 2011',
   end: 'Dec 2016',

@@ -6,9 +6,7 @@ const path = Astro.url.pathname.replace(/\/?$/, '/');
 
 <header class="site-header">
   <div class="container bar">
-    <a href="/" class="brand" aria-current={path === '/' ? 'page' : undefined}>
-      {site.name}<span class="role">{site.role}</span>
-    </a>
+    <a href="/" class="brand" aria-current={path === '/' ? 'page' : undefined}>{site.name}</a>
     <nav aria-label="Main">
       <ul>
         {
@@ -53,19 +51,6 @@ const path = Astro.url.pathname.replace(/\/?$/, '/');
   }
   .brand:hover {
     color: var(--accent);
-  }
-  .role {
-    margin-left: 0.6rem;
-    padding-left: 0.6rem;
-    border-left: 1px solid var(--border);
-    font-weight: 400;
-    font-size: 0.9rem;
-    color: var(--text-muted);
-  }
-  @media (max-width: 34rem) {
-    .role {
-      display: none;
-    }
   }
   ul {
     display: flex;

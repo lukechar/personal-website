@@ -1,6 +1,5 @@
 export const site = {
   name: 'Luke Charbonneau',
-  role: 'Software Engineer',
   title: 'Data Engineer · Back-end Web Developer',
   description:
     'Luke Charbonneau is a data engineer and back-end web developer building data processing pipelines for NASA missions at LASP.',

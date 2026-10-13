@@ -16,10 +16,13 @@ const fullTitle = title ? `${title} · ${site.name}` : `${site.name} · ${site.t
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const ogImage = await getImage({ src: avatar, width: 600, format: 'jpg' });
 const ogImageUrl = new URL(ogImage.src, Astro.site);
+// Optional 'light' | 'dark' override for previewing; unset means follow the OS setting.
+const forcedTheme = import.meta.env.PUBLIC_FORCE_THEME;
+const theme = forcedTheme === 'light' || forcedTheme === 'dark' ? forcedTheme : undefined;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme={theme}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

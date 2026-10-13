@@ -35,8 +35,10 @@
   --step-4: clamp(2.25rem, 1.6rem + 3vw, 3.25rem);
 }
 
+/* Dark tokens apply when the OS prefers dark, unless data-theme forces a theme
+   (set via PUBLIC_FORCE_THEME, used for previewing; unset in production). */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme='light']) {
     --bg: #111416;
     --surface: #181c1f;
     --text: #e6e8ea;
@@ -50,6 +52,26 @@
     --shadow: none;
     --shadow-hover: 0 4px 16px rgb(0 0 0 / 0.4);
   }
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #111416;
+  --surface: #181c1f;
+  --text: #e6e8ea;
+  --text-muted: #9aa3ad;
+  --border: #2a3035;
+  --accent: #4fc4bc;
+  --accent-hover: #7fd8d1;
+  --accent-soft: #15302f;
+  --on-accent: #0b1414;
+  --focus: #4fc4bc;
+  --shadow: none;
+  --shadow-hover: 0 4px 16px rgb(0 0 0 / 0.4);
 }
 
 /* ---------- Base ---------- */

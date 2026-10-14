@@ -77,7 +77,7 @@ export const projects: Project[] = [
     title: 'This Website',
     summary: 'The site you are looking at, built with Astro.',
     description:
-      'A static site built with Astro and hosted on S3 and CloudFront. Licensed under the GPLv3, so feel free to use it as a template. Attribution or a link back is appreciated but not required.',
+      'A static site built with Astro and hosted on AWS Amplify. Licensed under the GPLv3, so feel free to use it as a template. Attribution or a link back is appreciated but not required.',
     image: mountainRiver,
     imageAlt: 'A mountain river',
     tags: ['Astro', 'AWS', 'CSS'],
